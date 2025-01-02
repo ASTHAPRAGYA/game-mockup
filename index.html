@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome POWERPITCH</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-top: 20px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin: 20px;
+    }
+
+    .btn {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      color: white;
+      background-color: #007BFF;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 20px 0;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    .game-container {
+      display: none;
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    spline-viewer {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome POWERPITCH</h1>
+  <p>This is a mockup game by Team Protons to give a glimpse of what can be obtained by establishing gaming hubs to promote the Media and Entertainment Industry.</p>
+  
+  <button class="btn" onclick="startGame()">Start Mockup Game</button>
+
+  <div class="game-container" id="gameContainer">
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.54/build/spline-viewer.js"></script>
+    <spline-viewer url="https://prod.spline.design/RrUDCLyXOCeX-Yvm/scene.splinecode"></spline-viewer>
+  </div>
+
+  <script>
+    function startGame() {
+      const gameContainer = document.getElementById('gameContainer');
+      gameContainer.style.display = 'block';
+
+      // Request fullscreen
+      if (gameContainer.requestFullscreen) {
+        gameContainer.requestFullscreen();
+      } else if (gameContainer.mozRequestFullScreen) { // Firefox
+        gameContainer.mozRequestFullScreen();
+      } else if (gameContainer.webkitRequestFullscreen) { // Chrome, Safari and Opera
+        gameContainer.webkitRequestFullscreen();
+      } else if (gameContainer.msRequestFullscreen) { // IE/Edge
+        gameContainer.msRequestFullscreen();
+      }
+    }
+  </script>
+
+</body>
+</html>
